@@ -16,14 +16,10 @@ class mb1013_analog:
 	def __init__(self, pin_analog, pin_enable=None):
 		self.pin_analog = pin_analog
 		self.pin_enable = pin_enable
-
 		self.pin_analog.read_analog()
 
 	def get(self):
 		if self.pin_enable != None: pin_enable.write_digital(True)
-
 		reading = self.pin_analog.read_analog() * 5
-
 		if self.pin_enable != None: pin_enable.write_digital(False)
-
 		return reading
