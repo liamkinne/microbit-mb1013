@@ -8,6 +8,6 @@ class mb1013_serial:
 	def get(self):
 		uart.init(baudrate=9600,bits=8,parity=None,stop=1,rx=pin0)
 		pin1.write_digital(True)
-		display.scroll(str(uart.readline()))
+		retrun str(uart.readline())[1:]
 		uart.init(115200)
 		pin1.write_digital(False)
